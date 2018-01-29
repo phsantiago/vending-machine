@@ -1,11 +1,12 @@
-const calcChange = () => {
+const calcChange = (changeVal, wallet) => {
+
   return {
-    "1centavo": '',
-    "5centavos": '',
-    "10centavos": '',
-    "25centavos": '',
-    "50centavos": '',
-    "1real": '',
+    "1centavo": 0,
+    "5centavos": 1,
+    "10centavos": 0,
+    "25centavos": 0,
+    "50centavos": 1,
+    "1real": 3,
   }
 }
 
