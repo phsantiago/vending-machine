@@ -1,0 +1,11 @@
+{
+  "name": "vending-machine",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/phsantiago/vending-machine",
+  "author": "Phsantiago",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}
