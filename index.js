@@ -30,7 +30,21 @@ const calcCoin = (name, price, changeValAcc, wallet) => {
 }
 
 const calcChange = (changeVal, wallet) => {
+  if (typeof changeVal == 'undefined') {
+    throw 'Appears that you forgotten the change value on the first paramether';
+  }
+
+  if (typeof wallet == 'undefined') {
+    throw 'Appears that you forgotten the wallet on the second paramether';
+  }
+
+  if (typeof wallet !== 'object') {
+    throw 'Wallet must be a object';
+  }
+
+
   let changeValAcc = changeVal;
+
   const coinAcc = {
     real: 0,
     centavos50: 0,

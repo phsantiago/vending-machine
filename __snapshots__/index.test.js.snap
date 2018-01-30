@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calcChange should throw exeption when miss fist paramether 1`] = `undefined`;
+
+exports[`calcChange should throw exeption when miss wallet paramether 1`] = `undefined`;
+
+exports[`calcChange should throw exeption when wallet isn't a object 1`] = `undefined`;

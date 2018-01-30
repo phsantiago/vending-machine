@@ -2,7 +2,7 @@ const calcChange = require('./index.js');
 
 describe('calcChange', () => {
   it('should return a object with kinds of coins availble', () => {
-    expect(Object.keys(calcChange()).sort()).toEqual(['centavo', 'centavos5', 'centavos10', 'centavos25', 'centavos50', 'real'].sort());
+    expect(Object.keys(calcChange(0,{})).sort()).toEqual(['centavo', 'centavos5', 'centavos10', 'centavos25', 'centavos50', 'real'].sort());
   })
 
   it('should return 3 coins of kind "1real", one of 50 and one of 5 when receive 3.55', () => {
@@ -19,7 +19,7 @@ describe('calcChange', () => {
     expect(calcChange(3.55, wallet).centavos5).toBe(1);
   });
 
-  it('should propely calc 12 (10 real and 200 cents)', () => {
+  it('should propely calc 12 (10 real\'s and 200 cents)', () => {
     const wallet = {
       'centavo': 200,
       'centavos5': 0,
@@ -38,4 +38,16 @@ describe('calcChange', () => {
     }
     expect(calcChange(12, wallet)).toEqual(result);
   });
+
+  it('should throw exeption when miss fist paramether', () => {
+    expect(() => calcChange()).toThrowErrorMatchingSnapshot()
+  })
+
+  it('should throw exeption when miss wallet paramether', () => {
+    expect(() => calcChange(1)).toThrowErrorMatchingSnapshot()
+  })
+
+  it('should throw exeption when wallet isn\'t a object', () => {
+    expect(() => calcChange(1,1)).toThrowErrorMatchingSnapshot()
+  })
 })
